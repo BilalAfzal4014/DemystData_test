@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "baseUrl": "./src/app/",
+    "paths": {
+      "@app/*": ["./*"],
+      "@type/*": ["./types/*"],
+      "@middlewares/*": ["./express/middlewares/*"],
+      "@routes/*": ["./express/routes/*"],
+      "@models/*": ["./databases/models/*"],
+      "@repository/*": ["./databases/repository/*"],
+      "@usecases/*": ["./usecases/*"],
+      "@errors/*": ["./errors/*"],
+      "@providers/*": ["./providers/*"]
+    },
+    "plugins": [
+      {
+        "transform": "typescript-transform-paths"
+      }
+    ],
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "plugins":[
+    {
+      "transform":"typescript-transform-paths"
+    },
+    {
+      "transform":"typescript-transform-paths",
+      "afterDeclarations": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+version: '1.0'
+
+services:
+  main:
+    container_name: "DemystData_backend"
+    build:
+      context: .
+      target: development
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "4000:4000"
+    command: npm run start:watch
+    env_file:
+      - .env
+
